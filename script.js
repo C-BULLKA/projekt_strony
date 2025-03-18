@@ -130,7 +130,7 @@ function loadTaskDescription() {
     }
 }
 
-function loadTaskDescriptionPage() {
+function loadTaskDescription() {
     const taskId = parseInt(localStorage.getItem('selectedTaskId'));
     const task = tasks.find(t => t.id === taskId) || doneTasks.find(t => t.id === taskId) || laterTasks.find(t => t.id === taskId);
     const taskDescription = document.getElementById('taskDescription');
@@ -184,6 +184,7 @@ function loadColumns() {
         const li = document.createElement('li');
         li.innerHTML = `
             <span>${task.text}</span>
+            <p>${task.description || 'Brak opisu'}</p>
         `;
         currentTasks.appendChild(li);
     });
@@ -193,6 +194,7 @@ function loadColumns() {
         li.classList.add('done');
         li.innerHTML = `
             <span>${task.text}</span>
+            <p>${task.description || 'Brak opisu'}</p>
             <button onclick="moveToTasks(${task.id}, doneTasks)">Przenieś do listy zadań</button>
         `;
         doneTasksList.appendChild(li);
@@ -203,6 +205,7 @@ function loadColumns() {
         li.classList.add('later');
         li.innerHTML = `
             <span>${task.text}</span>
+            <p>${task.description || 'Brak opisu'}</p>
             <button onclick="moveToTasks(${task.id}, laterTasks)">Przenieś do listy zadań</button>
         `;
         laterTasksList.appendChild(li);
