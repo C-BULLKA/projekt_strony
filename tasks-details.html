@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Szczegóły Zadania</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <img src="https://via.placeholder.com/150x50?text=Logo" alt="Logo" class="logo">
+        <nav>
+            <ul>
+                <li><a href="index.html">Strona główna</a></li>
+                <li><a href="tasks.html">Lista zadań</a></li>
+                <li><a href="task-details.html">Szczegóły</a></li>
+                <li><a href="columns.html">3 Kolumny</a></li>
+                <li><a href="contact.html">Kontakt</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <h1>Szczegóły Zadania</h1>
+        <div id="taskDetails"></div>
+        <button onclick="window.location.href='tasks.html'">Wróć</button>
+    </main>
+    <footer>
+        <p>&copy; 2025 Lista Zadań z Inspiracją. Wszystkie prawa zastrzeżone.</p>
+    </footer>
+    <script src="script.js"></script>
+    <script>
+        loadTaskDetails();
+    </script>
+</body>
+</html>

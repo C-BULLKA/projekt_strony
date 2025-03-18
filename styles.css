@@ -1,0 +1,137 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+}
+
+header {
+    background: #333;
+    color: white;
+    padding: 10px;
+    text-align: center;
+}
+
+.logo {
+    display: block;
+    margin: 0 auto;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    padding: 10px 0;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+}
+
+nav a:hover {
+    text-decoration: underline;
+}
+
+main {
+    padding: 20px;
+    min-height: 70vh;
+}
+
+footer {
+    background: #333;
+    color: white;
+    text-align: center;
+    padding: 10px;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+}
+
+.task-list {
+    list-style: none;
+    margin-top: 20px;
+}
+
+.task-list li {
+    background: #f4f4f4;
+    padding: 10px;
+    margin: 5px 0;
+    display: flex;
+    justify-content: space-between;
+}
+
+button {
+    padding: 5px 10px;
+    background: #333;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+button:hover {
+    background: #555;
+}
+
+input, textarea {
+    padding: 5px;
+    margin: 5px 0;
+    width: 100%;
+    max-width: 300px;
+}
+
+/* Responsywność dla Lista Zadań */
+@media (min-width: 1024px) {
+    .task-list {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 10px;
+    }
+}
+
+@media (max-width: 767px) {
+    .task-list {
+        display: block;
+    }
+}
+
+/* Responsywność dla 3 Kolumn */
+.columns {
+    display: flex;
+    gap: 20px;
+}
+
+.column {
+    background: #f4f4f4;
+    padding: 10px;
+    flex: 1;
+}
+
+@media (min-width: 1024px) {
+    .columns {
+        flex-direction: row;
+    }
+}
+
+@media (min-width: 768px) and (max-width: 1023px) {
+    .columns {
+        flex-wrap: wrap;
+    }
+    .column {
+        flex: 0 0 48%;
+    }
+    .column:last-child {
+        flex: 0 0 100%;
+    }
+}
+
+@media (max-width: 767px) {
+    .columns {
+        flex-direction: column;
+    }
+}
