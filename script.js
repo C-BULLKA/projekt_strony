@@ -44,6 +44,7 @@ function loadAllTasks() {
         const li = document.createElement('li');
         li.innerHTML = `
             <span>${task.text}</span>
+            <p>${task.description || 'Brak opisu'}</p>
             <button onclick="markAsDone(${task.id})">Zrobione</button>
             <button onclick="markAsLater(${task.id})">Na Później</button>
         `;
