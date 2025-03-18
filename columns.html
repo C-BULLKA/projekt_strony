@@ -19,21 +19,29 @@
             </ul>
         </nav>
     </header>
-    <main class="columns">
-        <div class="column">
-            <h2>Kolumna 1</h2>
-            <p>Treść pierwszej kolumny.</p>
-        </div>
-        <div class="column">
-            <h2>Kolumna 2</h2>
-            <p>Treść drugiej kolumny.</p>
-        </div>
-        <div class="column">
-            <h2>Kolumna 3</h2>
-            <p>Treść trzeciej kolumny.</p>
+    <main class="container">
+        <h1>3 Kolumny</h1>
+        <div class="columns">
+            <div class="column done-column" id="doneTasks">
+                <h2>Zrobione</h2>
+                <ul></ul>
+            </div>
+            
+            <div class="column current-column" id="currentTasks">
+                <h2>Aktualne Zadania</h2>
+                <ul></ul>
+            </div>
+           
+            <div class="column later-column" id="laterTasks">
+                <h2>Na Później</h2>
+                <ul></ul>
+            </div>
         </div>
     </main>
     <footer>
+        <div class="advice">
+            <p>Porada dnia: <span id="advice-text">Ładowanie...</span></p>
+        </div>
         <p>&copy; 2025 Lista Zadań z Inspiracją. Wszystkie prawa zastrzeżone.</p>
     </footer>
     <script src="script.js"></script>

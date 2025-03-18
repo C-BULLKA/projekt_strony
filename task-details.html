@@ -19,17 +19,18 @@
             </ul>
         </nav>
     </header>
-    <main>
+    <main class="container">
         <h1>Szczegóły Zadania</h1>
         <div id="taskDetails"></div>
-        <button onclick="window.location.href='tasks.html'">Wróć</button>
+        <h2>Wszystkie Zadania</h2>
+        <ul id="allTasks"></ul>
     </main>
     <footer>
+        <div class="advice">
+            <p>Porada dnia: <span id="advice-text">Ładowanie...</span></p>
+        </div>
         <p>&copy; 2025 Lista Zadań z Inspiracją. Wszystkie prawa zastrzeżone.</p>
     </footer>
     <script src="script.js"></script>
-    <script>
-        loadTaskDetails();
-    </script>
 </body>
 </html>
