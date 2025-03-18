@@ -103,11 +103,10 @@ function markAsLater(id) {
 function moveToTasks(id, fromList) {
     const task = fromList.find(task => task.id === id);
     if (task) {
-        fromList = fromList.filter(task => task.id !== id);
+        fromList.splice(fromList.indexOf(task), 1); // Usunięcie zadania z odpowiedniej kolumny
         tasks.push(task);
         saveTasks();
         loadTasks();
-        loadAllTasks();
         loadColumns();
     }
 }
@@ -118,6 +117,20 @@ function showTaskDescription(id) {
 }
 
 function loadTaskDescription() {
+    const taskId = parseInt(localStorage.getItem('selectedTaskId'));
+    const task = tasks.find(t => t.id === taskId) || doneTasks.find(t => t.id === taskId) || laterTasks.find(t => t.id === taskId);
+    const taskDescription = document.getElementById('taskDetails');
+    if (task) {
+        taskDescription.innerHTML = `
+            <h2>${task.text}</h2>
+            <p>${task.description || 'Brak opisu'}</p>
+        `;
+    } else {
+        taskDescription.innerHTML = '<p>Zadanie nie znalezione.</p>';
+    }
+}
+
+function loadTaskDescriptionPage() {
     const taskId = parseInt(localStorage.getItem('selectedTaskId'));
     const task = tasks.find(t => t.id === taskId) || doneTasks.find(t => t.id === taskId) || laterTasks.find(t => t.id === taskId);
     const taskDescription = document.getElementById('taskDescription');
@@ -210,4 +223,10 @@ document.addEventListener('DOMContentLoaded', function() {
     loadTasks();
     loadAllTasks();
     loadColumns();
+    if (document.getElementById('taskDetails')) {
+        loadTaskDescription();
+    }
+    if (document.getElementById('taskDescription')) {
+        loadTaskDescriptionPage();
+    }
 });
